@@ -74,12 +74,12 @@ const PromoModal: React.FC<PromoModalProps> = ({ onSelectPromo }) => {
           className="w-fit mt-3 bg-yellow-500 text-white hover:bg-yellow-600"
         >
           <TicketPercent color="white" />
-          {status === Status.LOADING ? "Loading..." : "Promo Codes"}
+          {status === Status.LOADING ? "Loading..." : "Kode Promo"}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Available Promo Codes</DialogTitle>
+          <DialogTitle>Kode Promo Tersedia</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4">
           {status === Status.LOADING && (
@@ -107,20 +107,20 @@ const PromoModal: React.FC<PromoModalProps> = ({ onSelectPromo }) => {
                       }
                     >
                       <Copy size={16} />
-                      Copy Code
+                      Salin Kode
                     </Button>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Stock Left: {promo.prm_quantity}
+                    Stok Tersedia: {promo.prm_quantity}
                   </p>
                   <div className="flex justify-between text-sm">
                     <span className="font-semibold text-green-600">
-                      Discount {promo.prm_discount_percentage}%
+                      Diskon {promo.prm_discount_percentage}%
                     </span>
                     <span className="text-gray-500">
-                      Valid until:{" "}
+                      Berlaku sampai :{" "}
                       {new Date(promo.prm_expired_on).toLocaleDateString()}
                     </span>
                   </div>

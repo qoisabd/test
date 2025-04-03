@@ -40,9 +40,9 @@ const CardGame = () => {
     <section className="px-4 md:px-32 mt-10 pb-16">
       <div className="flex flex-row items-center gap-3 text-white">
         <Image src={imgCart} width={25} height={25} alt="cart" />
-        <h2 className="text-2xl font-semibold">All Games</h2>
+        <h2 className="text-2xl font-semibold">Semua Game</h2>
       </div>
-      <p className="text-white mb-5">List of games</p>
+      <p className="text-white mb-5">Daftar Game</p>
 
       <div className="flex flex-row flex-wrap gap-2 sm:gap-5">
         {displayedGames?.map((item, index) => (
@@ -79,7 +79,7 @@ const CardGame = () => {
             onClick={handleLoadMore}
             className="bg-[#0e587c] hover:bg-[#007d98] text-white font-semibold py-2 px-6 rounded-lg transition duration-300"
           >
-            Load More Games ...
+            Lihat Lainnya ...
           </button>
         </div>
       )}

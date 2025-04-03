@@ -62,7 +62,7 @@ const Register = () => {
   );
 
   const imgRegister = "/assets/images/img-sign-up.svg";
-  const logoDiamond = "/assets/logos/logo-rifqi-top-up.svg";
+  const logoDiamond = "/assets/logos/logo-tiara-games.svg";
 
   const onSubmit = async (data: SignUpFormValues) => {
     try {
@@ -116,35 +116,45 @@ const Register = () => {
       </div>
       <div className="sm:flex hidden flex-1 flex-col items-center justify-center min-h-screen bg-[#285CC4]">
         <div className="w-1/2">
-          <Image src={imgRegister} alt="login" />
+          <Image
+            src={imgRegister}
+            alt="login"
+            width={500}
+            height={500}
+            priority
+          />
         </div>
         <div className="mt-10">
           <p className="text-white text-lg text-center">
-            Start your journey with us Rifqi top-ups!
+            Mulailah perjalanan Anda bersama kami, Tiara Games!
           </p>
           <p className="text-white text-sm text-center">
-            Create a free account now! And start exploring the world of Top Up.
+            Buat akun gratis sekarang! Dan mulailah menjelajahi dunia Games.
           </p>
         </div>
       </div>
       <div className="flex flex-1 justify-center py-14 px-3">
         <div>
           <div className="flex justify-center">
-            <Image
-              src={logoDiamond}
-              alt="logo"
-              className="w-10 border border-1 rounded-full"
-              width={50}
-              height={50}
-            />
-            <h2 className="flex items-center justify-center text-[#285CC4] font-bold text-2xl">
-              Rifqi <span className="text-[#FBB017]">Top-up</span>
-            </h2>
+            <div>
+              <Image
+                src={logoDiamond}
+                alt="logo"
+                className="w-10 border border-1 rounded-full"
+                width={50}
+                height={50}
+              />
+            </div>
+            <div className="flex items-center">
+              <h2 className="text-[#285CC4] font-bold text-2xl">
+                Tiara<span className="text-[#FBB017]"> Games</span>
+              </h2>
+            </div>
           </div>
           <div className="mt-5">
-            <h2 className="text-3xl font-semibold">Create an account</h2>
+            <h2 className="text-3xl font-semibold">Buat Akunmu</h2>
             <p className="text-lg text-gray-400">
-              Please fill in the form to create an account
+              Silakan isi formulir untuk membuat akun
             </p>
           </div>
 
@@ -163,7 +173,7 @@ const Register = () => {
                       <FormControl>
                         <Input
                           type="text"
-                          placeholder="Enter your username"
+                          placeholder="Masukan username"
                           {...field}
                         />
                       </FormControl>
@@ -179,11 +189,11 @@ const Register = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email Address</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="Enter your email address"
+                          placeholder="Masukan email"
                           {...field}
                         />
                       </FormControl>
@@ -199,11 +209,11 @@ const Register = () => {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone Number</FormLabel>
+                      <FormLabel>No Handphone</FormLabel>
                       <FormControl>
                         <Input
                           type="text"
-                          placeholder="Enter your phone number"
+                          placeholder="Masukan no handphone"
                           {...field}
                         />
                       </FormControl>
@@ -224,7 +234,7 @@ const Register = () => {
                         <FormControl>
                           <Input
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="Masukan password"
                             {...field}
                             isPassword
                           />
@@ -241,11 +251,11 @@ const Register = () => {
                     name="confirmPassword"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Confirm Password</FormLabel>
+                        <FormLabel>Konfirmasi Password</FormLabel>
                         <FormControl>
                           <Input
                             type="password"
-                            placeholder="Confirm your password"
+                            placeholder="Masukan konfirmasi password"
                             {...field}
                             isPassword
                           />
@@ -259,7 +269,7 @@ const Register = () => {
                 </div>
 
                 <Button type="submit" className="w-full bg-[#285CC4]">
-                  {status === Status.LOADING ? "Signing Up..." : "Sign Up"}
+                  {status === Status.LOADING ? "Mendaftar..." : "Daftar"}
                 </Button>
                 {status === Status.FAILED && (
                   <p className="text-center text-red-500 mt-1">
@@ -267,9 +277,9 @@ const Register = () => {
                   </p>
                 )}
                 <p className="text-center text-gray-400 mt-1">
-                  Already have an account?{" "}
+                  Sudah punya Akun?{" "}
                   <span className="text-[#285CC4] font-semibold underline">
-                    <Link href="/sign-in">Sign In</Link>
+                    <Link href="/sign-in">Login disini</Link>
                   </span>
                 </p>
               </form>

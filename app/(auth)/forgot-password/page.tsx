@@ -84,12 +84,8 @@ const ForgotPassword = () => {
       {/* left side */}
       <div className="hidden md:flex w-1/2 bg-[#285CC4] items-center justify-center">
         <div className="text-center p-8">
-          <h1 className="text-5xl font-bold text-white mb-4">
-            Forgot Password
-          </h1>
           <p className="text-white text-lg">
-            Please enter your email to reset your password and regain access to
-            your account.
+          Silakan masukkan email Anda untuk mengatur ulang kata sandi dan mendapatkan kembali akses ke akun Anda.
           </p>
           <div className="mt-8 flex items-center justify-center">
             <Image
@@ -112,11 +108,10 @@ const ForgotPassword = () => {
             <MoveLeft size={24} className="inline-block" /> Back to Login
           </Link>
           <h2 className="text-3xl font-bold text-gray-800 mt-4">
-            Forgot Password
+            Lupa Password
           </h2>
           <p className="mt-2 text-gray-600">
-            Enter the email associated with your account, and we'll send an
-            email with instructions to reset your password.
+          Masukkan email yang terkait dengan akun Anda, dan kami akan mengirimkan email berisi petunjuk untuk mengatur ulang kata sandi Anda.
           </p>
           <div className="mt-5">
             <Form {...form}>
@@ -126,11 +121,11 @@ const ForgotPassword = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email Address</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="you@example.com"
+                          placeholder="Masukan email kamu"
                           {...field}
                         />
                       </FormControl>

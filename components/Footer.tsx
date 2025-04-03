@@ -5,7 +5,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
-  const logoImage = "/assets/logos/logo-rifqi-top-up.svg";
+  const logoImage = "/assets/logos/logo-tiara-games.svg";
   const getYear = new Date().getFullYear();
 
   return (
@@ -15,25 +15,24 @@ const Footer = () => {
           <div className="flex flex-row items-center gap-3">
             <Image
               src={logoImage}
-              alt="RifqiTopUp Logo"
+              alt="TiaraGames Logo"
               width={50}
               height={50}
               className="mb-4"
             />
             <h3 className="text-xl font-semibold text-white">
-              Rifqi
-              <span className="text-[#FBB017]"> Top Up</span>
+              Tiara
+              <span className="text-[#FBB017]"> Games</span>
             </h3>
           </div>
 
           <p className="text-sm text-justify text-white">
-            Rifqitopup is the ideal website for gamers looking to top up their
-            accounts at affordable and reliable prices. We are trusted as the
-            fastest and most responsive top-up provider in Indonesia. We offer
-            various secure payment methods, including bank transfers, virtual
-            bank accounts, e-wallets, and QR scanning, making transactions
-            convenient and safe. Additionally, our customer service team is
-            available 24/7 to assist you whenever needed.
+          Tiara Games adalah situs web ideal bagi para gamer yang ingin mengisi saldo akun mereka 
+          dengan harga terjangkau dan terpercaya. Kami dipercaya sebagai penyedia top-up tercepat 
+          dan paling responsif di Indonesia. Kami menawarkan berbagai metode pembayaran yang aman, 
+          termasuk transfer bank, rekening bank virtual, dompet elektronik, dan pemindaian QR, 
+          yang membuat transaksi menjadi nyaman dan aman. Selain itu, tim layanan pelanggan 
+          kami tersedia 24/7 untuk membantu Anda kapan pun dibutuhkan.
           </p>
         </div>
 
@@ -63,22 +62,22 @@ const Footer = () => {
                 href="/transaction-check"
                 className="hover:text-yellow-300 text-white"
               >
-                Transaction Check
+                Cek Transaksi
               </Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold text-[#f5960b] mb-4">Support</h4>
+          <h4 className="text-lg font-semibold text-[#f5960b] mb-4">Bantuan</h4>
           <ul className="space-y-2">
             <li>
               <Link
-                href="https://wa.me/6285175999728?text=Halo,%20admin%20saya%20membutuhkan%20bantuan"
+                href="https://wa.me/62895332410677?text=Halo,%20admin%20saya%20membutuhkan%20bantuan"
                 className="hover:text-yellow-300 text-white"
                 target="_blank"
               >
-                Contact Us
+                Hubungi Kami
               </Link>
             </li>
           </ul>
@@ -89,7 +88,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link
-                href="/privacy-policy"
+                href="#"
                 className="hover:text-yellow-300 text-white"
               >
                 Privacy Policy
@@ -97,7 +96,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="/terms-and-conditions"
+                href="#"
                 className="hover:text-yellow-300 text-white"
               >
                 Terms & Conditions
@@ -109,7 +108,7 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 md:px-32 mt-8 flex space-x-4 text-2xl">
         <Link
-          href="https://instagram.com/rifqi.setiawan18"
+          href="https://instagram.com/doelkussoy"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-yellow-300"
@@ -117,7 +116,7 @@ const Footer = () => {
           <FaInstagram />
         </Link>
         <Link
-          href="https://wa.me/6285175999728?text=Halo,%20admin%20saya%20membutuhkan%20bantuan"
+          href="https://wa.me/62895332410677?text=Halo,%20admin%20saya%20membutuhkan%20bantuan"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-green-500"
@@ -125,7 +124,7 @@ const Footer = () => {
           <FaWhatsapp />
         </Link>
         <Link
-          href="mailto:rfqtopup@gmail.com"
+          href="mailto:tokotokstoree@gmail.com"
           className="text-white hover:text-blue-500"
           rel="noopener noreferrer"
         >
@@ -135,7 +134,7 @@ const Footer = () => {
 
       <div className="mt-8 text-center text-sm text-[#64AFD0]">
         <div className="px-4 md:px-32 max-w-screen-lg mx-auto border-t border-[#989898] pt-4">
-          © {getYear} RIFQITOPUP All rights reserved.
+          Tiara Games © {getYear} by Asoyy Dev.
         </div>
       </div>
     </footer>

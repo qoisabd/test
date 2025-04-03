@@ -13,29 +13,28 @@ const SearchTransaction = ({ onSearch }: SearchTransactionProps) => {
       <div className="container relative py-12 text-left text-white">
         <div>
           <h2 className="maw-w-2xl text-3xl sm:text-4xl font-bold tracking-tight">
-            Track your orders here!
+              Lacak pesanan Anda di sini !
           </h2>
           <p className="mt-6 max-w-3xl capitalize">
-            Your order is not registered even though you are sure you have
-            ordered? Please wait 1-5 minutes. But if the order still does not
-            appear, you can{" "}
+          Pesanan Anda tidak terdaftar meskipun Anda yakin telah memesan? Harap tunggu 1-5 menit. 
+          Namun jika pesanan masih belum muncul, Anda dapat{" "}
             <Link
-              href="https://wa.me/6285282810339?text=Hello%20I%20want%20to%20ask%20about%20my%20order"
+              href="https://wa.me/62895332410677?text=Halo,%20Saya%20ingin%20bertanya%20tentang%20pesanan saya"
               target="_blank"
               className="underline underline-offset-2 decoration-yellow-500"
             >
-              Contact Us
+              Hubungi Kami
             </Link>
           </p>
         </div>
         <div className="max-w-xl mt-5">
           <label htmlFor="search-input" className="text-sm mb-2 block">
-            Enter your order number
+            Masukan nomor pesananmu
           </label>
           <div className="relative">
             <Search className="absolute z-10 left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-black pointer-events-none" />
             <Input
-              placeholder="Rfqtopupxxxxxxx"
+              placeholder="Trxxxxxxxx"
               className="pl-10 text-black placeholder-blue-300"
               onChange={(e) => onSearch(e.target.value)}
             />

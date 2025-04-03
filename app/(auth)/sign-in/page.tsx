@@ -20,17 +20,13 @@ import { Bounce, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { loginUser } from "@/features/auth/authThunk";
-import { auth, googleProvider, signInWithPopup } from "@/lib/firebase";
-import { loginWithGoogle } from "@/features/auth/authThunk";
-import { resetLoginWithGoogle } from "@/features/auth/loginWithGoogleSlice";
-import { FcGoogle } from "react-icons/fc";
 import { ApiErrorType } from "@/types/types";
 import { FaArrowLeft } from "react-icons/fa";
 
 // Schema for form validation
 const formSchema = z.object({
-  input: z.string().min(5, "Username or email must be at least 5 characters"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  input: z.string().min(5, "Username atau email minimal 5 karakter"),
+  password: z.string().min(8, "Password minimal 8 karakter"),
   rememberMe: z.boolean(),
 });
 
@@ -51,7 +47,7 @@ const Login = () => {
   const { status } = useSelector((state: RootState) => state.loginReducer);
 
   const imgLogin = "/assets/images/img-sign-in.svg";
-  const logoDiamond = "/assets/logos/logo-rifqi-top-up.svg";
+  const logoDiamond = "/assets/logos/logo-tiara-games.svg";
 
   const onSubmit = async (data: SignInFormValues) => {
     try {
@@ -137,42 +133,6 @@ const Login = () => {
     }
   };
 
-  const handleLoginWithGoogle = async () => {
-    try {
-      googleProvider.setCustomParameters({ prompt: "select_account" });
-      const result = await signInWithPopup(auth, googleProvider);
-      const user = result.user;
-      const idToken = await user.getIdToken();
-      await dispatch(loginWithGoogle({ idToken })).unwrap();
-      toast.success("Google login success", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
-      router.push("/");
-    } catch (error) {
-      const errorMessage = (error as ApiErrorType).message || "Unknown error";
-      dispatch(resetLoginWithGoogle());
-      toast.error(`Google login failed: ${errorMessage}`, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
-    }
-  };
-
   return (
     <div className="w-full flex">
       <div className="absolute top-4 left-4">
@@ -185,9 +145,8 @@ const Login = () => {
       </div>
       <div className="sm:flex hidden w-1/2 flex-1 flex-col items-center justify-center min-h-screen bg-[#285CC4] ">
         <div className="text-center p-8">
-          <h1 className="text-5xl font-bold text-white mb-4">Login</h1>
           <p className="text-white text-lg">
-            Level up your gaming experience with Rifqi top-ups!
+            Tingkatkan pengalaman bermain game dengan Tiara Games!
           </p>
           <div className="mt-8 flex items-center justify-center">
             <Image
@@ -213,15 +172,13 @@ const Login = () => {
             </div>
             <div className="flex items-center">
               <h2 className="text-[#285CC4] font-bold text-2xl">
-                Rifqi<span className="text-[#FBB017]">Top-up</span>
+                Tiara<span className="text-[#FBB017]"> Games</span>
               </h2>
             </div>
           </div>
           <div className="mt-5">
-            <h2 className="text-3xl font-semibold">Welcome Back Gamers!</h2>
-            <p className="text-lg text-gray-400">
-              Please, login to your account
-            </p>
+            <h2 className="text-3xl font-semibold">Selamat Datang, Gamers !</h2>
+            <p className="text-lg text-gray-400">Silahkan masuk ke Akunmu</p>
           </div>
 
           <div className="mt-5">
@@ -236,11 +193,11 @@ const Login = () => {
                     name="input"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Username or Email Address</FormLabel>
+                        <FormLabel>Username atau Email</FormLabel>
                         <FormControl>
                           <Input
                             type="text"
-                            placeholder="Enter your username or email"
+                            placeholder="Masukan username atau email"
                             {...field}
                           />
                         </FormControl>
@@ -260,7 +217,7 @@ const Login = () => {
                         <FormControl>
                           <Input
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="Masukan password"
                             {...field}
                             isPassword
                           />
@@ -275,10 +232,10 @@ const Login = () => {
 
                 <div className="flex flex-row justify-between items-center text-center">
                   <label className="flex items-center text-sm font-normal">
-                    <input type="checkbox" className="mr-1" /> Remember me
+                    <input type="checkbox" className="mr-1" /> Ingat saya
                   </label>
                   <p className="text-[#285CC4] text-sm underline hover:text-blue-900">
-                    <Link href="/forgot-password">Forgot Password?</Link>
+                    <Link href="/forgot-password">Lupa Password?</Link>
                   </p>
                 </div>
 
@@ -286,29 +243,13 @@ const Login = () => {
                   type="submit"
                   className="w-full bg-[#285CC4] hover:bg-[#1A4C8B] text-white"
                 >
-                  {status === "loading" ? "Signing In..." : "Sign In"}
-                </Button>
-
-                <div className="my-1 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                  <p className="mx-2 mb-0 text-center font-semibold text-slate-500">
-                    Or
-                  </p>
-                </div>
-
-                <Button
-                  type="button"
-                  className="w-full bg-white text-[#285CC4] border-[#285CC4] hover:bg-[#FBB017] hover:text-white border hover:border-[#FBB017]"
-                  variant="ghost"
-                  onClick={handleLoginWithGoogle}
-                >
-                  <FcGoogle />
-                  Sign In with Google
+                  {status === "loading" ? "Mohon tunggu..." : "Login"}
                 </Button>
 
                 <p className="text-center text-gray-400 mt-1">
-                  Don't have an account?{" "}
+                  Belum mempunyai Akun?{" "}
                   <span className="text-[#285CC4] font-semibold underline">
-                    <Link href="/sign-up">Sign Up</Link>
+                    <Link href="/sign-up">Daftar disini</Link>
                   </span>
                 </p>
               </form>

@@ -29,7 +29,7 @@ export default function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const logoImage = "/assets/logos/logo-rifqi-top-up.svg";
+  const logoImage = "/assets/logos/logo-tiara-games.svg";
 
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
@@ -102,12 +102,12 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src={logoImage}
-              alt="Rifqi Top-up Logo"
+              alt="Tiara Games Logo"
               width={50}
               height={50}
             />
             <span className="font-bold text-base lg:text-xl text-white">
-              Rifqi<span className="text-[#FBB017]">TopUp</span>
+              Tiara<span className="text-[#FBB017]"> Games</span>
             </span>
           </Link>
         </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
               className="text-sm lg:text-base flex items-center gap-2 text-white hover:text-blue-400"
             >
               <Search size={24} />
-              <span>Transaction Check</span>
+              <span>Cek Transaksi</span>
             </Link>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 text-white hover:text-blue-400 p-2"
                 >
                   <Search size={24} />
-                  <span>Transaction Check</span>
+                  <span>Cek Transaksi</span>
                 </Link>
                 <hr className="border-gray-800" />
                 {user ? (

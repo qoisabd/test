@@ -98,7 +98,7 @@ const GameDetail = () => {
         console.error("Failed to decode token", err);
       }
     }
-  }, []);
+  }, [form]);
 
   useEffect(() => {
     if (categoryCode) {
@@ -116,7 +116,7 @@ const GameDetail = () => {
 
   const sections = [
     {
-      title: "Instant Process",
+      title: "Proses Cepat",
       products: productDetail,
     },
   ];
@@ -170,7 +170,7 @@ const GameDetail = () => {
       console.log("Order created successfully", result);
     } catch (error) {
       const errorMessage = (error as ApiErrorType).message || "Unknown error";
-      console.error("Failed to create order", errorMessage);
+      console.error("Gagal untuk membuat order", errorMessage);
     }
   };
 
@@ -221,15 +221,15 @@ const GameDetail = () => {
                   <div className="flex flex-col flex-wrap md:flex-row  mt-4 gap-3 text-xs text-white">
                     <div className="flex items-center gap-2">
                       <Zap color="#fbff00" size={16} />
-                      <p>1-3 Minute Process</p>
+                      <p>Proses 1-3 Menit</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <MessageSquareMore size={16} color="#06005b" />
-                      <p>Customer Support: 24/7</p>
+                      <p>Dukungan Customer : 24/7</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <Globe size={16} color="#60faa5" />
-                      <p>Region: Indonesia</p>
+                      <p>Negara : Indonesia</p>
                     </div>
                   </div>
                 </div>
@@ -242,11 +242,11 @@ const GameDetail = () => {
                   <Card className="bg-blue-80 text-white">
                     <CardContent className="text-xs mt-3">
                       <h4 className="mb-3">
-                        Follow these steps to enjoy{" "}
+                      Ikuti langkah-langkah berikut untuk menikmati {" "}
                         <span className="font-bold">
                           {category.ct_currency_type}
                         </span>{" "}
-                        at a low price and with guaranteed safety.
+                        dengan harga murah dan terjamin keamanannya.
                       </h4>
                       {orderSteps.map((step, index) => (
                         <div key={index}>
@@ -261,11 +261,10 @@ const GameDetail = () => {
                         </div>
                       ))}
                       <p className="mt-3 md:mt-7">
-                        For Customer Support, please contact Admin on our
-                        official Whatsapp at +62 123-4567-8910 {""}
+                      Untuk Dukungan Pelanggan, silakan hubungi Admin di Whatsapp +62 8953-3241-0677 {""}
                         <span className="text-yellow-500">
-                          <a href="https://wa.me/12345678910" target="_blank">
-                            or click here
+                          <a href="https://wa.me/62895332410677" target="_blank">
+                            atau klik disini
                           </a>
                         </span>
                       </p>
@@ -284,7 +283,7 @@ const GameDetail = () => {
                             1
                           </div>
                           <h3 className="flex w-full items-center rounded-tr-xl bg-gradient-to-b from-blue-800/50 to-blue-900/50 px-4 text-sm md:text-lg font-semibold text-white">
-                            Enter your Account Detail
+                            Masukan Detail Akunmu
                           </h3>
                         </div>
 
@@ -296,12 +295,12 @@ const GameDetail = () => {
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel className="text-white">
-                                    Account Name
+                                    Nama Akun
                                   </FormLabel>
                                   <FormControl>
                                     <Input
                                       type="text"
-                                      placeholder="Enter your Account Name"
+                                      placeholder="Masukan Username Akun"
                                       {...field}
                                     />
                                   </FormControl>
@@ -317,12 +316,12 @@ const GameDetail = () => {
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel className="text-white">
-                                    Account ID
+                                    ID Akun
                                   </FormLabel>
                                   <FormControl>
                                     <Input
                                       type="text"
-                                      placeholder="Enter your account ID"
+                                      placeholder="Masukan ID dan Server Akun"
                                       {...field}
                                     />
                                   </FormControl>
@@ -335,7 +334,7 @@ const GameDetail = () => {
                         <div className="px-4 pb-4 text-[10px] sm:px-6 sm:pb-6">
                           <div>
                             <p className="text-white">
-                              <em>Contoh = Rifqi#1234</em>
+                              <em>Contoh = Tiara#1234</em>
                             </p>
                           </div>
                         </div>
@@ -347,7 +346,7 @@ const GameDetail = () => {
                             2
                           </div>
                           <h3 className="flex w-full items-center rounded-tr-xl bg-gradient-to-b from-blue-800/50 to-blue-900/50 px-4 text-sm md:text-lg font-semibold text-white">
-                            Choose the Amount Purchase
+                          Pilih Pembelian
                           </h3>
                         </div>
 
@@ -438,7 +437,7 @@ const GameDetail = () => {
                             3
                           </div>
                           <h3 className="flex w-full items-center rounded-tr-xl bg-gradient-to-b from-blue-800/50 to-blue-900/50 px-4 text-sm md:text-lg font-semibold text-white">
-                            Enter Quantity Purchase
+                            Masukkan Jumlah Pembelian
                           </h3>
                         </div>
 
@@ -449,14 +448,14 @@ const GameDetail = () => {
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel className="text-white">
-                                  Quantity
+                                  Jumlah
                                 </FormLabel>
                                 <FormControl>
                                   <div className="flex items-center space-x-2">
                                     <div className="flex-grow">
                                       <Input
                                         type="number"
-                                        placeholder="Enter the quantity"
+                                        placeholder="Masukan jumlah pembelian"
                                         {...field}
                                         value={field.value}
                                         className=" w-full text-start no-spinner"
@@ -507,7 +506,7 @@ const GameDetail = () => {
                             4
                           </div>
                           <h3 className="flex w-full items-center rounded-tr-xl bg-gradient-to-b from-blue-800/50 to-blue-900/50 px-4 text-sm md:text-lg font-semibold text-white">
-                            Enter Promo Code (Optional)
+                            Masukan Kode Promo (Optional)
                           </h3>
                         </div>
 
@@ -518,12 +517,12 @@ const GameDetail = () => {
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel className="text-white">
-                                  Promo Code
+                                  Kode Promo
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     type="text"
-                                    placeholder="Enter your promo code"
+                                    placeholder="Masukan kode promo"
                                     {...field}
                                   />
                                 </FormControl>
@@ -541,7 +540,7 @@ const GameDetail = () => {
                             5
                           </div>
                           <h3 className="flex w-full items-center rounded-tr-xl bg-gradient-to-b from-blue-800/50 to-blue-900/50 px-4 text-sm md:text-lg font-semibold text-white">
-                            Contact Detail
+                            Kontak Pembeli
                           </h3>
                         </div>
 
@@ -557,7 +556,7 @@ const GameDetail = () => {
                                 <FormControl>
                                   <Input
                                     type="text"
-                                    placeholder="Enter your email address"
+                                    placeholder="Masukan email kamu"
                                     {...field}
                                     className="mb-4"
                                     disabled={user !== null}
@@ -573,12 +572,12 @@ const GameDetail = () => {
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel className="text-white">
-                                  Whatsapp Number
+                                  Nomor Whatsapp
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     type="text"
-                                    placeholder="Enter your whatsapp number"
+                                    placeholder="Masukan nomor whatsappmu"
                                     {...field}
                                   />
                                 </FormControl>
@@ -590,8 +589,7 @@ const GameDetail = () => {
                         <div>
                           <p className="px-4 pb-4 text-[10px] sm:px-6 sm:pb-6 text-white">
                             <em>
-                              *Proof of transaction will be sent to the email
-                              you filled in above.
+                              *Bukti transaksi akan dikirim ke email yang Anda isi di atas.
                             </em>
                           </p>
                         </div>
@@ -603,7 +601,7 @@ const GameDetail = () => {
                           className="w-full bg-[#F5960B] text-white rounded-lg hover:bg-[#FBBB2E]"
                         >
                           <ShoppingCart size={24} />
-                          Create Order
+                          Buat Pesanan
                         </Button>
                       </div>
                     </form>

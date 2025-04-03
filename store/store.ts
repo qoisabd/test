@@ -3,7 +3,6 @@ import loginReducer from "@/features/auth/loginSlice";
 import registerReducer from "@/features/auth/registerSlice";
 import sendEmailReducer from "@/features/auth/sendEmailSlice";
 import updateResetPasswordReducer from "@/features/auth/updateResetPasswordSlice";
-import loginWithGoogleReducer from "@/features/auth/loginWithGoogleSlice";
 import themeReducer from "@/features/theme/themeSlice";
 import categoryReducer from "@/features/category/categorySlice";
 import categoryDetailReducer from "@/features/category/categoryDetailSlice";
@@ -26,7 +25,6 @@ export const makeStore = () => {
       registerReducer,
       sendEmailReducer,
       updateResetPasswordReducer,
-      loginWithGoogleReducer,
       themeReducer,
       categoryReducer,
       categoryDetailReducer,
