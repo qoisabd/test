@@ -138,7 +138,7 @@ const UserForm: React.FC<UserFormProps> = ({ initialData, onClose }) => {
             Cancel
           </Button>
           <Button type="submit">
-            {initialData ? "Update User" : "Create User"}
+            {initialData ? "Update User" : "Tambah User"}
           </Button>
         </div>
       </form>

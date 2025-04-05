@@ -13,10 +13,10 @@ export function OrderAdminHeader({ onSearch, data }: OrderHistoryHeaderProps) {
     if (data.length === 0) return;
 
     const csvData = data.map((order) => ({
-      "Order ID": order.or_id,
+      "Kode Pesanan": order.or_id,
       Date: new Date(order.or_created_at).toLocaleDateString(),
-      "Platform ID": order.or_platform_id,
-      "Game Name":
+      "ID Platform": order.or_platform_id,
+      "Nama Game":
         order.orderItem?.oi_product
           ?.map((product) => product.category_name)
           .filter((name) => name)
@@ -44,7 +44,7 @@ export function OrderAdminHeader({ onSearch, data }: OrderHistoryHeaderProps) {
       link.setAttribute("href", url);
       link.setAttribute(
         "download",
-        `list_all_order_rfq-topup_${new Date().toISOString().split("T")[0]}.csv`
+        `list_all_order_tiara-games_${new Date().toISOString().split("T")[0]}.csv`
       );
       link.style.visibility = "hidden";
       document.body.appendChild(link);
@@ -55,12 +55,12 @@ export function OrderAdminHeader({ onSearch, data }: OrderHistoryHeaderProps) {
 
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6 mx-5">
-      <h1 className="text-2xl font-bold tracking-tight">List All Orders</h1>
+      <h1 className="text-2xl font-bold tracking-tight">Daftar Pesanan</h1>
       <div className="flex items-center gap-4">
         <div className="relative">
           <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search orders..."
+            placeholder="Cari pesanan..."
             className="pl-8"
             onChange={(e) => onSearch(e.target.value)}
           />

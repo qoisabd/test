@@ -146,23 +146,23 @@ const ProductDataTable: React.FC = () => {
 
   const columns = [
     {
-      name: "No",
+      name: "No.",
       cell: (_: ProductType, index: number) => index + 1,
       sortable: true,
       width: "80px",
     },
     {
-      name: "Product Name",
+      name: "Nama Produk",
       selector: (row: ProductType) => row.pr_name,
       sortable: true,
     },
     {
-      name: "Category",
+      name: "Kategori",
       selector: (row: ProductType) => row.category?.ct_name || "-",
       sortable: true,
     },
     {
-      name: "Price",
+      name: "Harga",
       selector: (row: ProductType) => row.pr_price,
       sortable: true,
       format: (row: ProductType) => formatCurrency(row.pr_price),
@@ -174,7 +174,7 @@ const ProductDataTable: React.FC = () => {
       sortable: true,
     },
     {
-      name: "Actions",
+      name: "Aksi",
       cell: (row: ProductType) => (
         <div className="flex space-x-2">
           <Button
@@ -227,7 +227,7 @@ const ProductDataTable: React.FC = () => {
           setIsCreateModalOpen(true);
         }}
       >
-        <Plus className="mr-2 h-4 w-4" /> Create Product
+        <Plus className="mr-2 h-4 w-4" /> Tambah Produk
       </Button>
 
       <DataTable
@@ -250,9 +250,9 @@ const ProductDataTable: React.FC = () => {
       <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Disable Product</DialogTitle>
+            <DialogTitle>Nonaktifkan Produk</DialogTitle>
             <DialogDescription>
-              Are you sure you want to disable this product?
+              Apa kamu yakin ingin menonaktifkan produk?
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end space-x-2">
@@ -275,9 +275,9 @@ const ProductDataTable: React.FC = () => {
       >
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Activate Product</DialogTitle>
+            <DialogTitle>Aktifkan Produk</DialogTitle>
             <DialogDescription>
-              Are you sure you want to activate this product?
+              Apa kamu yakin ingin mengaktifkan produk?
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end space-x-2">

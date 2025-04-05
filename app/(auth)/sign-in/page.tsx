@@ -90,9 +90,22 @@ const Login = () => {
         router.push("/");
       }
     } catch (error) {
-      const errorMessage = (error as ApiErrorType).message || "Unknown error";
+      const errorMessage =
+        (error as ApiErrorType).message || "Unknown error occurred";
 
-      if (errorMessage === "Please verify your email first") {
+      if (errorMessage.includes("Network error")) {
+        toast.error("Network error: Please check your connection.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else if (errorMessage === "Please verify your email first") {
         toast.error(`User Login Failed: ${errorMessage}`, {
           position: "top-right",
           autoClose: 5000,

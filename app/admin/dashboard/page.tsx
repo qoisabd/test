@@ -37,25 +37,25 @@ export default function DashboardPage() {
 
   const stats = [
     {
-      title: "Total Users",
+      title: "Total Pengguna",
       value: (totalUser as { totalUser: string })?.totalUser || "N/A",
       icon: <Users className="w-8 h-8 text-blue-500" />,
       error: error.totalUser,
     },
     {
-      title: "Total Products",
+      title: "Total Produk",
       value: (totalProduct as { totalProduct: string })?.totalProduct || "N/A",
       icon: <ShoppingBag className="w-8 h-8 text-green-500" />,
       error: error.totalProduct,
     },
     {
-      title: "Total Orders",
+      title: "Total Pesanan",
       value: (totalOrder as { totalOrder: string })?.totalOrder || "N/A",
       icon: <ShoppingCart className="w-8 h-8 text-purple-500" />,
       error: error.totalOrder,
     },
     {
-      title: "Total Revenue",
+      title: "Total Pendapatan",
       value: formatCurrency(
         (totalAmount as { totalAmount: string })?.totalAmount || "0"
       ),
@@ -66,7 +66,7 @@ export default function DashboardPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold mb-6">Dashboard Overview</h1>
+      <h1 className="text-2xl font-semibold mb-6">Dashboard</h1>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {stats.map((stat, index) => (
           <CardOverview

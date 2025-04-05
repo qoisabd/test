@@ -30,8 +30,8 @@ import { Bounce, toast } from "react-toastify";
 const formSchema = z.object({
   ct_name: z
     .string()
-    .min(2, { message: "Category name must be at least 2 characters" })
-    .max(50, { message: "Category name must be at most 50 characters" }),
+    .min(2, { message: "Nama Kategori must be at least 2 characters" })
+    .max(50, { message: "Nama Kategori must be at most 50 characters" }),
   ct_code: z
     .string()
     .min(2, { message: "Category code must be at least 2 characters" }),
@@ -182,12 +182,12 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            {initialData ? "Edit Category" : "Create Category"}
+            {initialData ? "Edit Kategori" : "Tambah Kategori"}
           </DialogTitle>
           <DialogDescription>
             {initialData
               ? "Update existing category details"
-              : "Create a new category"}
+              : "Membuat kategori baru"}
           </DialogDescription>
         </DialogHeader>
 
@@ -198,9 +198,9 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
               name="ct_name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Category Name</FormLabel>
+                  <FormLabel>Nama Kategori</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter category name" {...field} />
+                    <Input placeholder="Masukan nama kategori" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -212,9 +212,9 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
               name="ct_code"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Category Code</FormLabel>
+                  <FormLabel>Kode Kategori</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter category code" {...field} />
+                    <Input placeholder="Masukan kode kategori" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -228,7 +228,7 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
                 <FormItem>
                   <FormLabel>Game Publisher</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter game publisher" {...field} />
+                    <Input placeholder="Masukan game publisher" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -240,9 +240,9 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
               name="ct_currency_type"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Currency Type</FormLabel>
+                  <FormLabel>Bentuk Top Up</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter currency type" {...field} />
+                    <Input placeholder="Masukan bentuk top up (DM, Voucher, UC, dll)" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -254,7 +254,7 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
               name="ct_image"
               render={({ field: { onChange } }) => (
                 <FormItem>
-                  <FormLabel>Category Image</FormLabel>
+                  <FormLabel>Gambar Kategori</FormLabel>
                   <FormControl>
                     <Input
                       type="file"
@@ -272,7 +272,7 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
               name="ct_image_cover"
               render={({ field: { onChange } }) => (
                 <FormItem>
-                  <FormLabel>Cover Image</FormLabel>
+                  <FormLabel>Gambar Cover</FormLabel>
                   <FormControl>
                     <Input
                       type="file"
@@ -290,7 +290,7 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
               name="ct_currency_type_image"
               render={({ field: { onChange } }) => (
                 <FormItem>
-                  <FormLabel>Currency Type Image</FormLabel>
+                  <FormLabel>Gambar Bentuk Top Up</FormLabel>
                   <FormControl>
                     <Input
                       type="file"
@@ -309,14 +309,14 @@ const CategoriesCreateModal: React.FC<CategoriesCreateModalProps> = ({
                 variant="outline"
                 onClick={() => onOpenChange(false)}
               >
-                Cancel
+                Batal
               </Button>
               <Button type="submit" disabled={loading}>
                 {loading
-                  ? "Processing..."
+                  ? "Menyimpan..."
                   : initialData
-                  ? "Update Category"
-                  : "Create Category"}
+                  ? "Simpan"
+                  : "Tambah"}
               </Button>
             </div>
           </form>

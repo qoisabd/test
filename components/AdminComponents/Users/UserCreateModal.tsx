@@ -151,11 +151,11 @@ const UserCreateModal: React.FC<UserCreateModalProps> = ({
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{initialData ? "Edit User" : "Create User"}</DialogTitle>
+          <DialogTitle>{initialData ? "Edit User" : "Tambah User"}</DialogTitle>
           <DialogDescription>
             {initialData
-              ? "Update existing user details"
-              : "Create a new user account"}
+              ? "Mengubah Akun Pengguna"
+              : "Membuat Akun Pengguna"}
           </DialogDescription>
         </DialogHeader>
 
@@ -168,7 +168,7 @@ const UserCreateModal: React.FC<UserCreateModalProps> = ({
                 <FormItem>
                   <FormLabel>Username</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter username" {...field} />
+                    <Input placeholder="Masukan username" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -181,7 +181,7 @@ const UserCreateModal: React.FC<UserCreateModalProps> = ({
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter email" {...field} />
+                    <Input placeholder="Masukan email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -197,7 +197,7 @@ const UserCreateModal: React.FC<UserCreateModalProps> = ({
                     <Input
                       type="password"
                       placeholder={
-                        initialData ? "Enter new password" : "Enter password"
+                        initialData ? "Masukan password baru" : "Masukan password"
                       }
                       {...field}
                     />
@@ -211,9 +211,9 @@ const UserCreateModal: React.FC<UserCreateModalProps> = ({
               name="us_phone_number"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
+                  <FormLabel>No Handphone</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter phone number" {...field} />
+                    <Input placeholder="Masukan no handphone" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -225,10 +225,10 @@ const UserCreateModal: React.FC<UserCreateModalProps> = ({
                 variant="outline"
                 onClick={() => onOpenChange(false)}
               >
-                Cancel
+                Batal
               </Button>
               <Button type="submit">
-                {initialData ? "Update User" : "Create User"}
+                {initialData ? "Simpan" : "Tambah"}
               </Button>
             </div>
           </form>

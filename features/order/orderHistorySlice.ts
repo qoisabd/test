@@ -32,7 +32,7 @@ export const orderHistorySlice = createSlice({
       .addCase(fetchOrdersByUserId.rejected, (state, action) => {
         state.status = Status.FAILED;
         state.errorMessage =
-          action.error.message || "Failed to fetch order history";
+          action.error.message || "Failed to fetch Riwayat Pesanan";
       })
       .addCase(fetchAllOrder.pending, (state) => {
         state.status = Status.LOADING;
@@ -45,7 +45,7 @@ export const orderHistorySlice = createSlice({
       .addCase(fetchAllOrder.rejected, (state, action) => {
         state.status = Status.FAILED;
         state.errorMessage =
-          action.error.message || "Failed to fetch order history";
+          action.error.message || "Failed to fetch Riwayat Pesanan";
       });
   },
 });

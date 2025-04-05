@@ -40,12 +40,12 @@ const adminUserSlice = createSlice({
         state.errorMessage = action.error.message || "Failed to fetch users";
       })
 
-      //   Create User
+      //   Tambah User
       .addCase(createUser.fulfilled, (state, action) => {
         state.users.push(action.payload);
       })
       .addCase(createUser.rejected, (state, action) => {
-        state.errorMessage = action.error.message || "Failed to create user";
+        state.errorMessage = action.error.message || "Failed to Tambah User";
       })
 
       //   Update User

@@ -76,7 +76,7 @@ export default function OrderHistoryPage() {
       width: "80px",
     },
     {
-      name: "Date",
+      name: "Tanggal",
       selector: (row: OrderHistoryType) =>
         new Date(row.or_created_at).toLocaleString("id-ID", {
           timeZone: "Asia/Jakarta",
@@ -85,13 +85,13 @@ export default function OrderHistoryPage() {
       width: "200px",
     },
     {
-      name: "Transaction ID",
+      name: "Kode Transaksi",
       selector: (row: OrderHistoryType) => row.or_platform_id,
       sortable: true,
       width: "250px",
     },
     {
-      name: "Game Name",
+      name: "Nama Game",
       cell: (row: OrderHistoryType) => {
         const categories = row.orderItem?.oi_product
           ?.map((product) => product.category_name)
@@ -100,7 +100,7 @@ export default function OrderHistoryPage() {
         return categories || "-";
       },
       sortable: true,
-      width: "250px",
+      width: "150px",
     },
     {
       name: "Total",
@@ -117,7 +117,7 @@ export default function OrderHistoryPage() {
       width: "200px",
     },
     {
-      name: "Action",
+      name: "Aksi",
       cell: (row: OrderHistoryType) => (
         <div className="flex space-x-2">
           <Button
@@ -129,7 +129,7 @@ export default function OrderHistoryPage() {
             }}
           >
             <FileTerminal className="text-yellow-400" />
-            View Details
+            Detail
           </Button>
           <Button
             variant="ghost"
@@ -139,7 +139,7 @@ export default function OrderHistoryPage() {
             }}
           >
             <CreditCard className="text-green-500" />
-            View Payment
+            Pembayaran
           </Button>
         </div>
       ),

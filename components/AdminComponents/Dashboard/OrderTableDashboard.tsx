@@ -43,13 +43,13 @@ export default function RecentOrdersPage() {
 
   const columns = [
     {
-      name: "No",
+      name: "No.",
       selector: (row: OrderHistoryType, index: number) => index + 1,
       sortable: true,
-      width: "60px",
+      width: "80px",
     },
     {
-      name: "Date",
+      name: "Tanggal",
       selector: (row: OrderHistoryType) =>
         new Date(row.or_created_at).toLocaleString("id-ID", {
           timeZone: "Asia/Jakarta",
@@ -58,13 +58,13 @@ export default function RecentOrdersPage() {
       width: "160px",
     },
     {
-      name: "Transaction ID",
+      name: "Kode Transaksi",
       selector: (row: OrderHistoryType) => row.or_platform_id,
       sortable: true,
       width: "200px",
     },
     {
-      name: "Game Name",
+      name: "Nama Game",
       cell: (row: OrderHistoryType) => {
         const categories = row.orderItem?.oi_product
           ?.map((product) => product.category_name)
@@ -90,7 +90,7 @@ export default function RecentOrdersPage() {
       width: "120px",
     },
     {
-      name: "Action",
+      name: "Aksi",
       cell: (row: OrderHistoryType) => (
         <div className="flex space-x-2">
           <Button
@@ -102,7 +102,7 @@ export default function RecentOrdersPage() {
             }}
           >
             <FileTerminal className="mr-2 h-4 w-4 text-yellow-400" />
-            View Details
+            Detail
           </Button>
           <Button
             variant="ghost"
@@ -110,7 +110,7 @@ export default function RecentOrdersPage() {
             onClick={() => handleViewPayment(row)}
           >
             <CreditCard className="mr-2 h-4 w-4 text-green-500" />
-            View Payment
+            Pembayaran
           </Button>
         </div>
       ),
@@ -177,7 +177,7 @@ export default function RecentOrdersPage() {
     <div className="container mx-auto py-8">
       <Card>
         <CardHeader>
-          <CardTitle>Recent Orders (Last 24 Hours)</CardTitle>
+          <CardTitle>Pesanan Masuk (24 Jam Terakhir)</CardTitle>
         </CardHeader>
         <CardContent>
           <DataTableComponent

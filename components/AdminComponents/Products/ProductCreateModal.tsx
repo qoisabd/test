@@ -167,12 +167,12 @@ const ProductCreateModal: React.FC<ProductCreateModalProps> = ({
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            {initialData ? "Edit Product" : "Create Product"}
+            {initialData ? "Edit Produk" : "Tambah Produk"}
           </DialogTitle>
           <DialogDescription>
             {initialData
-              ? "Update existing product details"
-              : "Create a new product"}
+              ? "Ubah Detail Produk"
+              : "Membuat Produk Baru"}
           </DialogDescription>
         </DialogHeader>
 
@@ -183,9 +183,9 @@ const ProductCreateModal: React.FC<ProductCreateModalProps> = ({
               name="pr_name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Product Name</FormLabel>
+                  <FormLabel>Nama Produk</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter product name" {...field} />
+                    <Input placeholder="Masukan nama produk" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -197,14 +197,14 @@ const ProductCreateModal: React.FC<ProductCreateModalProps> = ({
               name="pr_ct_id"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Category</FormLabel>
+                  <FormLabel>Kategori</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a category" />
+                        <SelectValue placeholder="Pilih kategori" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -228,9 +228,9 @@ const ProductCreateModal: React.FC<ProductCreateModalProps> = ({
               name="pr_price"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Price</FormLabel>
+                  <FormLabel>Harga</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="Enter price" {...field} />
+                    <Input type="number" placeholder="Masukan harga" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -243,10 +243,10 @@ const ProductCreateModal: React.FC<ProductCreateModalProps> = ({
                 variant="outline"
                 onClick={() => onOpenChange(false)}
               >
-                Cancel
+                Batal
               </Button>
               <Button type="submit">
-                {initialData ? "Update Product" : "Create Product"}
+                {initialData ? "Simpan" : "Tambah"}
               </Button>
             </div>
           </form>

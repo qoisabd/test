@@ -62,7 +62,7 @@ const adminCategorySlice = createSlice({
       })
       .addCase(createCategory.rejected, (state, action) => {
         state.errorMessage =
-          action.error.message || "Failed to create category";
+          action.error.message || "Failed to Tambah Kategori";
       });
 
     // Update Category

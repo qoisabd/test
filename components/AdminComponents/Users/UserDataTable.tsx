@@ -130,7 +130,7 @@ const UserDataTable: React.FC = () => {
 
   const columns = [
     {
-      name: "No",
+      name: "No.",
       cell: (row: RegisterType, index: number) => index + 1,
       sortable: true,
       width: "80px",
@@ -146,7 +146,7 @@ const UserDataTable: React.FC = () => {
       sortable: true,
     },
     {
-      name: "Phone Number",
+      name: "No Handphone",
       selector: (row: RegisterType) => row.us_phone_number,
       sortable: true,
     },
@@ -156,7 +156,7 @@ const UserDataTable: React.FC = () => {
       sortable: true,
     },
     {
-      name: "Actions",
+      name: "Aksi",
       cell: (row: RegisterType) => (
         <div className="flex space-x-2">
           <Button
@@ -212,7 +212,7 @@ const UserDataTable: React.FC = () => {
           setIsCreateModalOpen(true);
         }}
       >
-        <Plus className="mr-2 h-4 w-4" /> Create User
+        <Plus className="mr-2 h-4 w-4" /> Tambah User
       </Button>
 
       <DataTable
@@ -235,9 +235,9 @@ const UserDataTable: React.FC = () => {
       <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Disable User</DialogTitle>
+            <DialogTitle>Nonaktifkan User</DialogTitle>
             <DialogDescription>
-              Are you sure you want to disable this user?
+              Apa kamu yakin ingin menonaktifkan user?
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end space-x-2">
@@ -260,9 +260,9 @@ const UserDataTable: React.FC = () => {
       >
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Enable User</DialogTitle>
+            <DialogTitle>Aktifkan User</DialogTitle>
             <DialogDescription>
-              Are you sure you want to Enable this user?
+              Apa kamu yakin ingin mengaktifkan user?
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end space-x-2">

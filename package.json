@@ -1,7 +1,23 @@
 {
-  "name": "frontend-top-up",
+  "name": "tiara-games",
   "version": "0.1.0",
   "private": true,
+  "description": "Aplikasi top up games menggunakan midtrans",
+  "homepage": "https://github.com/qoisabd/test#readme",
+  "bugs": {
+    "url": "https://github.com/qoisabd/test/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qoisabd/test.git"
+  },
+  "license": "ISC",
+  "author": "Asoyy Dev.",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,6 +39,7 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "csv": "^6.3.11",
     "firebase": "^11.6.0",
     "js-cookie": "^3.0.5",
     "jspdf": "^3.0.1",

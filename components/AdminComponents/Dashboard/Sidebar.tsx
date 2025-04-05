@@ -30,14 +30,14 @@ const menuItems = [
     label: "Dashboard",
     path: "/admin/dashboard",
   },
-  { icon: <Users size={20} />, label: "Users", path: "/admin/users" },
+  { icon: <Users size={20} />, label: "Pengguna", path: "/admin/users" },
   {
     icon: <ShoppingBag size={20} />,
-    label: "Products",
+    label: "Produk",
     path: "/admin/products",
   },
-  { icon: <ShoppingCart size={20} />, label: "Orders", path: "/admin/orders" },
-  { icon: <List size={20} />, label: "Categories", path: "/admin/categories" },
+  { icon: <ShoppingCart size={20} />, label: "Pesanan", path: "/admin/orders" },
+  { icon: <List size={20} />, label: "Kategori", path: "/admin/categories" },
 ];
 
 export const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
@@ -79,7 +79,7 @@ export const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
           <div className="p-4 flex items-center justify-between">
             <h1 className={`font-bold text-xl ${!isSidebarOpen && "hidden"}`}>
               Admin Panel <br />
-              <span>Rifqi Topup</span>
+              <span>Tiara Games</span>
             </h1>
             <Button
               variant="ghost"
@@ -126,10 +126,10 @@ export const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
           setIsLogoutModalOpen(false);
           handleLogout();
         }}
-        title="Confirm Logout"
-        description="Are you sure you want to log out? You will be redirected to the login page."
+        title="Konfirmasi Keluar"
+        description="Yakin ingin keluar?"
         confirmText="Logout"
-        cancelText="Cancel"
+        cancelText="Batal"
       />
     </>
   );

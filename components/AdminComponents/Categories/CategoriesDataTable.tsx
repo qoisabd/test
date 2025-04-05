@@ -135,18 +135,18 @@ const CategoryDataTable: React.FC = () => {
 
   const columns = [
     {
-      name: "No",
+      name: "No.",
       cell: (_: CategoryType, index: number) => index + 1,
       sortable: true,
       width: "80px",
     },
     {
-      name: "Category Name",
+      name: "Nama Kategori",
       selector: (row: CategoryType) => row.ct_name,
       sortable: true,
     },
     {
-      name: "Code",
+      name: "Kode",
       selector: (row: CategoryType) => row.ct_code,
       sortable: true,
     },
@@ -156,12 +156,12 @@ const CategoryDataTable: React.FC = () => {
       sortable: true,
     },
     {
-      name: "Currency Type",
+      name: "Bentuk Top Up",
       selector: (row: CategoryType) => row.ct_currency_type,
       sortable: true,
     },
     {
-      name: "Image",
+      name: "Gambar",
       cell: (row: CategoryType) => (
         <div className="h-16 w-16 relative">
           <Image
@@ -178,7 +178,7 @@ const CategoryDataTable: React.FC = () => {
       cell: (row: CategoryType) => (row.ct_is_active ? "Active" : "Inactive"),
     },
     {
-      name: "Actions",
+      name: "Aksi",
       cell: (row: CategoryType) => (
         <div className="flex space-x-2">
           <Button
@@ -232,7 +232,7 @@ const CategoryDataTable: React.FC = () => {
         }}
       >
         <Plus className="mr-2 h-4 w-4" />
-        Add Category
+        Tambah Kategori
       </Button>
 
       <DataTable
@@ -256,10 +256,10 @@ const CategoryDataTable: React.FC = () => {
       <Dialog open={isDeleteModalOpen} onOpenChange={setIsDeleteModalOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Disable Category</DialogTitle>
+            <DialogTitle>Nonaktifkan Kategori</DialogTitle>
           </DialogHeader>
           <DialogDescription>
-            Are you sure you want to disable this category?
+            Apa kamu yakin ingin menonaktifkan kategori?
           </DialogDescription>
           <div className="flex justify-end space-x-2">
             <Button
@@ -281,10 +281,10 @@ const CategoryDataTable: React.FC = () => {
       >
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Active Category</DialogTitle>
+            <DialogTitle>Aktifkan Kategori</DialogTitle>
           </DialogHeader>
           <DialogDescription>
-            Are you sure you want to active this category?
+            Apa kamu yakin ingin mengaktifkan kategori?
           </DialogDescription>
           <div className="flex justify-end space-x-2">
             <Button

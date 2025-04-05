@@ -2,6 +2,11 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RegisterType, LoginType } from "@/types/types";
 
+const axiosInstance = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+  timeout: 10000, // Set a timeout of 10 seconds
+});
+
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (data: RegisterType, { rejectWithValue }) => {
@@ -24,15 +29,16 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (data: LoginType, { rejectWithValue }) => {
     try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
-        data,
-        { withCredentials: true }
-      );
+      const response = await axiosInstance.post("/auth/login", data, {
+        withCredentials: true,
+      });
       return response.data;
     } catch (error: any) {
+      if (error.code === "ECONNABORTED") {
+        return rejectWithValue("Request timed out. Please try again.");
+      }
       if (!error.response) {
-        throw error;
+        return rejectWithValue("Network error. Please check your connection.");
       }
       return rejectWithValue(error.response.data);
     }

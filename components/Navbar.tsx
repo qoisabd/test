@@ -151,7 +151,7 @@ export default function Navbar() {
                     className="w-full flex flex-row gap-3 "
                   >
                     <History className="text-yellow-500" />
-                    Order History
+                    Riwayat Pesanan
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -210,7 +210,7 @@ export default function Navbar() {
                       href="/order-history"
                       className="text-white hover:text-blue-400 p-2"
                     >
-                      Order History
+                      Riwayat Pesanan
                     </Link>
                     <button
                       onClick={() => setIsLogoutModalOpen(true)}
@@ -247,10 +247,10 @@ export default function Navbar() {
           setIsLogoutModalOpen(false);
           handleLogout();
         }}
-        title="Confirm Logout"
-        description="Are you sure you want to log out?"
+        title="Konfirmasi Keluar"
+        description="Yakin ingin keluar?"
         confirmText="Logout"
-        cancelText="Cancel"
+        cancelText="Batal"
       />
     </>
   );

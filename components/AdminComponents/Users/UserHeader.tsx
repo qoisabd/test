@@ -54,12 +54,12 @@ export function UserManagementHeader({
 
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
-      <h1 className="text-2xl font-bold tracking-tight">User Management</h1>
+      <h1 className="text-2xl font-bold tracking-tight">Kelola User</h1>
       <div className="flex items-center gap-4">
         <div className="relative">
           <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search users..."
+            placeholder="Cari User..."
             className="pl-8"
             onChange={(e) => onSearch(e.target.value)}
           />

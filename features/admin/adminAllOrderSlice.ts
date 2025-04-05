@@ -32,7 +32,7 @@ export const AdminAllOrderSlice = createSlice({
       .addCase(fetchAllOrder.rejected, (state, action) => {
         state.status = Status.FAILED;
         state.errorMessage =
-          action.error.message || "Failed to fetch order history";
+          action.error.message || "Failed to fetch Riwayat Pesanan";
       });
   },
 });
